@@ -4,7 +4,7 @@
 
 > 路由和过滤器代码<br>
 > 核心组件：RouterFunction / WebFilter / HandlerFilterFunction
-```javascript
+```java
     @Bean
     public RouterFunction<ServerResponse> routerFunction(ShortUrlHandler handler) {
         return route()
@@ -41,7 +41,7 @@
 ```
 > 重定向代码<br/>
 > 核心组件：HandlerFunction
-```javascript
+```java
     public Mono<ServerResponse> route(ServerRequest request) {
         String shortCode = request.pathVariable("code");
         if (shortCode == null || shortCode.length() < 8) {
@@ -76,7 +76,7 @@
 
 > 响应式非阻塞HTTP请求代码<br/>
 > 核心组件：WebClient
-```javascript
+```java
     protected <T, R> Mono<T> get(String url, Map<String, String> headers, ClientRequestConfig requestConfig, Function<R, T> converter, Class<R> clazz) {
         Mono<T> result = createRequestHeadersSpec(url, headers)
                 .retrieve()
@@ -137,7 +137,7 @@
 
 > 为HandlerFunction传递Context参数<br/>
 > 核心组件：RouterFunction
-```javascript
+```java
     @Bean
     public RouterFunction<ServerResponse> routerFunction() {
         return route()
@@ -180,7 +180,7 @@
 
 > 权限校验与Context设置<br />
 > 核心组件：HandlerFilterFunction / Context
-```javascript
+```java
     @Override
     public Mono<ServerResponse> filter(ServerRequest request, HandlerFunction<ServerResponse> next) {
         ServiceContext serviceContext = ServiceContextBuilder.createServiceContext();
@@ -259,7 +259,7 @@
 
 > 调用RPC服务<br/>
 > 核心组件：HandlerFunction / Dubbo
-```javascript
+```java
     public Mono<ServerResponse> groupQuery(ServerRequest request, ServiceContext serviceContext) {
         return body(request).flatMap(schemaJson -> {
             Map<String, Map<String, Object>> results = null;
@@ -279,7 +279,7 @@
 
 > 导出Excel代码<br/>
 > 核心组件：MDD / HandlerFunction / DataBuffer
-```javascript
+```java
     public Mono<ServerResponse> export(ServerRequest request, ServiceContext serviceContext) {
         String m = request.pathVariable("m");
         String c = request.pathVariable("c");
@@ -336,7 +336,7 @@
 
 > 聚合查询<br/>
 > 核心组件：MDD
-```javascript
+```java
     public Mono<ServerResponse> groupQueryFormat(ServerRequest request, ServiceContext context) {
         String name = request.pathVariable("name");
         String json = groupQueryFormat(name, context);
