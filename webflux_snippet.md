@@ -1,5 +1,5 @@
 # WebFlux项目片段
-## 短链接
+## 短链接服务
 [创建短链接](http://su.yonyouup.com/su/create?url=https%3A%2F%2Fdocs.spring.io%2Fspring%2Fdocs%2Fcurrent%2Fspring-framework-reference%2Fweb-reactive.html%23webflux-fn)
 
 > 路由和过滤器代码<br>
@@ -62,8 +62,8 @@
     }
 ```
 
-## 快递路由
-[快递单号查询](http://express.yonyouup.com/)
+## 快递路由服务
+[快递单号查询网址](http://express.yonyouup.com/)
 
 快递单号
 - [ ] TT9900001766878
@@ -132,8 +132,8 @@
     }
 ```
 
-## 看板
-[营销云看板](http://yxykb.yonyouup.com/)
+## 看板服务
+[看板网址](http://yxykb.yonyouup.com/)
 
 > 为HandlerFunction传递Context参数<br/>
 > 核心组件：RouterFunction
