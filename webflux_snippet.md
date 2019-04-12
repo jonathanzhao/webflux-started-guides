@@ -12,6 +12,7 @@
                 .GET("/favicon.ico", (request) -> status(HttpStatus.NOT_FOUND).build())
                 .GET("/{code}", handler::route)
                 .GET("/", handler::home)
+// 注意HandlerFilterFunction 与 WebFilter 的区别
 //                .filter((request, next) ->
 //                        next.handle(request).onErrorResume(ex -> {
 //                            logger.error("未处理的异常 " + ex.getMessage(), ex);
