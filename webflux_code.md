@@ -369,7 +369,7 @@
 ```
 
 > 查询方案
-```json
+```javascript
 [
   {
     "name": "monthProductQty",
@@ -492,7 +492,7 @@
 ```
 
 > 格式化模版
-```xhtml
+```java
 {
     "success": true,
     "msg": "success",
@@ -516,7 +516,7 @@
                 "data": [
                 <#?(monthProductQty.totalCount>0){#>
                 <#*(d:monthProductQty.data){#>
-<#=monthProductQty#><#?(IS_LAST!=true)#>,<#}#>
+                   <#=monthProductQty#><#?(IS_LAST!=true)#>,<#}#>
                 <#}#>
 
                 <#}#>
@@ -527,7 +527,7 @@
                     "data": [
                         <#?(monthProductQty.totalCount>0){#>
                         <#*(d:monthProductQty.data){#>
-"<#=yearMouth#>"<#?(IS_LAST!=true)#>,<#}#>
+                           "<#=yearMouth#>"<#?(IS_LAST!=true)#>,<#}#>
                         <#}#>
 
                         <#}#>
